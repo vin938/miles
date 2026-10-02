@@ -8,7 +8,6 @@ import {
   View,
 } from "react-native";
 
-// Student data
 const students = [
   {
     id: "s1",
@@ -40,7 +39,6 @@ const students = [
   },
 ];
 
-// StudentCard component
 function StudentCard({
   name,
   course,
@@ -73,7 +71,6 @@ function StudentCard({
   );
 }
 
-// StudentRoster component
 function StudentRoster() {
   const [reverse, setReverse] = useState(false);
 
@@ -103,9 +100,9 @@ function StudentRoster() {
       </View>
 
       <ScrollView>
-        {displayedStudents.map((student) => (
+        {displayedStudents.map((student, index) => (
           <StudentCard
-            key={student.id}
+            key={index}
             name={student.name}
             course={student.course}
             units={student.units}
@@ -117,12 +114,10 @@ function StudentRoster() {
   );
 }
 
-// App entry
 export default function Index() {
   return <StudentRoster />;
 }
 
-// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
